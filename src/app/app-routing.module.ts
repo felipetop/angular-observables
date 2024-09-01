@@ -33,6 +33,8 @@ const routes: Routes = [
       },
     ]
   },
+  { path: 'character-details', loadChildren: () => import('./pages/single-character/single-character.module').then(m => m.SingleCharacterModule) },
+  { path: 'my-team', loadChildren: () => import('./pages/my-team/my-team.module').then(m => m.MyTeamModule) },
 ];
 
 @NgModule({
