@@ -27,7 +27,10 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      // aqui você poderá incluir as rotas futuramente
+      {
+        path: routeConfig['itemList'],
+        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+      },
     ]
   },
 ];
