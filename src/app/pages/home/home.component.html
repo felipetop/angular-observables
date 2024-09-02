@@ -1,4 +1,23 @@
-<p>home works!</p>
-<div *ngIf="characters">
-    {{ characters | json }}
-</div>
+<div *ngIf="characterResponse$ | async as characterResponse; else loading">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div *ngFor="let character of characterResponse.results" class="p-4">
+        <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-white">
+          <h3 class="text-xl font-bold mb-2">{{ character.name }}</h3>
+          <img [src]="character.image" alt="{{ character.name }}" class="rounded shadow-lg mb-4 w-32 h-32 object-cover">
+          <p>Status: {{ character.status }}</p>
+          <p>Species: {{ character.species }}</p>
+          <p>Gender: {{ character.gender }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- <div class="mt-4">
+      <button *ngIf="characterResponse.info.prev" (click)="loadPage(characterResponse.info.prev)">Previous</button>
+      <button *ngIf="characterResponse.info.next" (click)="loadPage(characterResponse.info.next)">Next</button>
+    </div> -->
+  </div>
+  
+  <ng-template #loading>
+    <p>Loading characters...</p>
+  </ng-template>
+  

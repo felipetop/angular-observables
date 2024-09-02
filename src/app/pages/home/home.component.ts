@@ -10,16 +10,12 @@ import { CharacterService } from '../../service/character.service';
 export class HomeComponent implements OnInit {
 
   
-  characters: any[] = [];
+  characterResponse$ = this.characterService.getCharacters();
 
   constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
-    console.log('foi aqui 1')
     this.characterService.loadCharacters();
-    this.characterService.getCharacters().subscribe(characters => {
-      this.characters = characters;
-    });
   }
 
 }

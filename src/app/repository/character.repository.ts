@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { getAllCharactersGraphQl } from './queries/all-characters.graphql';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterRepository {
+  private readonly endpoint = 'https://rickandmortyapi.com/graphql';
+  private readonly apiUrl = 'https://rickandmortyapi.com/api/character';
 
-  private apiUrl = 'https://rickandmortyapi.com/api/character';
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  public getCharacters(page: number = 1): Observable<any> {
+    const query = getAllCharactersGraphQl;
+    const variables = { page: page };
 
-  getCharacters(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    return this.httpClient.post<any>(this.endpoint, { query, variables });
   }
 
-  getCharacterById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  public (id: number): Observable<any> {
+    return this.httpClient.get<any>(`${this.apiUrl}/${id}`);
   }
 }
