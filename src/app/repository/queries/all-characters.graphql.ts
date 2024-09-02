@@ -1,6 +1,6 @@
 export const getAllCharactersGraphQl = `
-  query ($page: Int) {
-    characters(page: $page) {
+  query ($page: Int, $name: String) {
+    characters(page: $page, filter: { name: $name }) {
       info {
         count
         pages

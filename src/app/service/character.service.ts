@@ -13,8 +13,8 @@ export class CharacterService {
 
   constructor(private characterRepository: CharacterRepository) {}
 
-  public loadCharacters(index: number) {
-    this.characterRepository.getCharacters(index).subscribe(response => {
+  public loadCharacters(index: number, name?: string) {
+    this.characterRepository.getCharacters(index, name).subscribe(response => {
       this.characters$.next(response.data.characters);
     });
     this.currentPage$.next(index);
@@ -22,10 +22,6 @@ export class CharacterService {
 
   getCharacters(): Observable<CharacterResponse> {
     return this.characters$.asObservable();
-  }
-
-  getCurrentPage(): Observable<Number> {
-    return this.currentPage$.asObservable();
   }
 
   // getCharacterById(id: number): Observable<any> {

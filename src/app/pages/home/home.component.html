@@ -1,5 +1,5 @@
 <app-pagination></app-pagination>
-
+<app-search></app-search>
 <div *ngIf="characterResponse$ | async as characterResponse; else loading">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <div *ngFor="let character of characterResponse.results">

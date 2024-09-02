@@ -5,6 +5,8 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { PaginationModule } from '../../components/pagination/pagination.module';
+import { SearchComponent } from 'src/app/components/search/search.component';
+import { SearchModule } from 'src/app/components/search/search.module';
 
 
 @NgModule({
@@ -15,11 +17,12 @@ import { PaginationModule } from '../../components/pagination/pagination.module'
     CommonModule,
     HeaderModule,
     HomeRoutingModule,
-    PaginationModule
+    PaginationModule,
+    SearchModule  
   ],
   exports: [
     HomeComponent,
-    HomeRoutingModule
+    HomeRoutingModule,
   ]
 })
 export class HomeModule { }

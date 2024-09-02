@@ -12,9 +12,9 @@ export class CharacterRepository {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getCharacters(page: number = 1): Observable<any> {
+  public getCharacters(page: number = 1, name?: string): Observable<any> {
     const query = getAllCharactersGraphQl;
-    const variables = { page: page };
+    const variables = { page: page, name: name || null };
 
     return this.httpClient.post<any>(this.endpoint, { query, variables });
   }
