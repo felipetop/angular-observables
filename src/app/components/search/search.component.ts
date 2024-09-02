@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
     .pipe(
       debounceTime(300)
     ).subscribe(name => {
-      this.characterService.loadCharacters(1, name);
+      this.characterService.filterCharacters(name);
     });
   }
 }

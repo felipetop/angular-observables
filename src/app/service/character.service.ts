@@ -11,13 +11,20 @@ export class CharacterService {
   private characters$ = new ReplaySubject<CharacterResponse>(1);
   public currentPage$ = new BehaviorSubject<number>(1);
 
+  public searchName: string = '';
+
   constructor(private characterRepository: CharacterRepository) {}
 
-  public loadCharacters(index: number, name?: string) {
-    this.characterRepository.getCharacters(index, name).subscribe(response => {
+  public loadCharacters(index: number) {
+    this.characterRepository.getCharacters(index, this.searchName).subscribe(response => {
       this.characters$.next(response.data.characters);
     });
     this.currentPage$.next(index);
+  }
+
+  public filterCharacters(name: string) {
+    this.searchName = name;
+    this.loadCharacters(1);
   }
 
   getCharacters(): Observable<CharacterResponse> {
