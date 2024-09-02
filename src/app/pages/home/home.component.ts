@@ -9,13 +9,12 @@ import { CharacterService } from '../../service/character.service';
 })
 export class HomeComponent implements OnInit {
 
-  
   characterResponse$ = this.characterService.getCharacters();
 
   constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
-    this.characterService.loadCharacters();
+    this.characterService.loadCharacters(1);
   }
 
 }

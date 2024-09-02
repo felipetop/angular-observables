@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject, Observable } from 'rxjs';
+import { ReplaySubject, Observable, BehaviorSubject } from 'rxjs';
 import { CharacterRepository } from '../repository/character.repository';
 import { CharacterResponse } from '../model/character.model';
 
@@ -9,17 +9,23 @@ import { CharacterResponse } from '../model/character.model';
 export class CharacterService {
 
   private characters$ = new ReplaySubject<CharacterResponse>(1);
+  public currentPage$ = new BehaviorSubject<number>(1);
 
   constructor(private characterRepository: CharacterRepository) {}
 
-  public loadCharacters() {
-    this.characterRepository.getCharacters(1).subscribe(response => {
+  public loadCharacters(index: number) {
+    this.characterRepository.getCharacters(index).subscribe(response => {
       this.characters$.next(response.data.characters);
     });
+    this.currentPage$.next(index);
   }
 
   getCharacters(): Observable<CharacterResponse> {
     return this.characters$.asObservable();
+  }
+
+  getCurrentPage(): Observable<Number> {
+    return this.currentPage$.asObservable();
   }
 
   // getCharacterById(id: number): Observable<any> {

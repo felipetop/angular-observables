@@ -1,0 +1,45 @@
+<div *ngIf="characterResponse$ | async as characterResponse" class="mb-4">
+    <div class="flex justify-center mt-4">
+      <!-- Previous Group Button -->
+      <button
+        class="mx-1 bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
+        [disabled]="currentPage$.getValue() === 1"
+        (click)="prevPageGroup()">
+        &laquo;
+      </button>
+  
+      <!-- Previous Button -->
+      <button
+        class="mx-1 bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
+        [disabled]="currentPage$.getValue() === 1"
+        (click)="goToPage(currentPage$.getValue() - 1)">
+        Previous
+      </button>
+  
+      <!-- Page Number Buttons -->
+      <button
+        *ngFor="let page of visiblePages"
+        class="mx-1 bg-blue-500 text-white py-2 px-4 rounded"
+        [ngClass]="{'bg-blue-700': page === currentPage$.getValue()}"
+        (click)="goToPage(page)">
+        {{ page }}
+      </button>
+  
+      <!-- Next Button -->
+      <button
+        class="mx-1 bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
+        [disabled]="currentPage$.getValue() === totalPages.length"
+        (click)="goToPage(currentPage$.getValue() + 1)">
+        Next
+      </button>
+  
+      <!-- Next Group Button -->
+      <button
+        class="mx-1 bg-blue-500 text-white py-2 px-4 rounded disabled:opacity-50"
+        [disabled]="currentPage$.getValue() === totalPages.length"
+        (click)="nextPageGroup()">
+        &raquo;
+      </button>
+    </div>
+</div>
+  

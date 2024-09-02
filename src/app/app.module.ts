@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { HeaderComponent } from './components/header/header.component';
 import { HeaderModule } from './components/header/header.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
