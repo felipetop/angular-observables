@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { take } from 'rxjs';
 import { CharacterService } from '../../service/character.service';
 
 @Component({
