@@ -50,7 +50,8 @@ export class TeamService {
   ];
   
   public mockTeam: Team = {
-    coordinator: this.mockTeamMembers[0],
+    manager: this.mockTeamMembers[0],
+    coordinator: this.mockTeamMembers[1],
     scrumMaster: this.mockTeamMembers[1],
     productOwner: this.mockTeamMembers[2],
     developerOne: this.mockTeamMembers[1],

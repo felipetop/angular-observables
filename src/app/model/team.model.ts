@@ -5,13 +5,14 @@ export interface TeamMember {
 }
 
 export interface Team {
+  manager: TeamMember | undefined
   coordinator: TeamMember | undefined;
-  scrumMaster: TeamMember;
-  productOwner: TeamMember; 
-  developerOne: TeamMember;
-  developerTwo: TeamMember;
-  developerThree: TeamMember;
-  qualityAssuranceOne: TeamMember;
-  qualityAssuranceTwo: TeamMember;
-  pet: TeamMember;
+  scrumMaster: TeamMember | undefined;
+  productOwner: TeamMember | undefined; 
+  developerOne: TeamMember | undefined;
+  developerTwo: TeamMember | undefined;
+  developerThree: TeamMember | undefined;
+  qualityAssuranceOne: TeamMember | undefined;
+  qualityAssuranceTwo: TeamMember | undefined;
+  pet: TeamMember | undefined;
 }
