@@ -2,9 +2,10 @@
     <h1 class="text-xl font-bold mb-2 text-center">Escolha Sua Equipe</h1>
     
     <!-- Organização em uma linha -->
-    <div class="flex justify-center items-center flex-wrap space-x-1">
+    <div *ngIf="team$ | async as team" class="flex justify-center items-center flex-wrap space-x-1">
         <div class="bg-blue-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <p class="text-xs font-bold">Gestor</p>
+            <img *ngIf="team.coordinator" [src]="team.coordinator.image" alt="{{ team.coordinator.name }}" class="w-100 h-100 rounded-lg">
+            <p *ngIf="!team.coordinator" class="text-xs font-bold">Gestor</p>
         </div>
         <div class="bg-blue-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
             <p class="text-xs font-bold">Coordenador</p>
