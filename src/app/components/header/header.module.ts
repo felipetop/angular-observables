@@ -4,6 +4,9 @@ import { MenuComponent } from '../menu/menu.component';
 import { HeaderComponent } from './header.component';
 import { AppModule } from 'src/app/app.module';
 import { MenuModule } from '../menu/menu.module';
+import { PaginationModule } from '../pagination/pagination.module';
+import { SearchModule } from '../search/search.module';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 
@@ -11,7 +14,10 @@ import { MenuModule } from '../menu/menu.module';
   declarations: [HeaderComponent],
   imports: [
     CommonModule,
-    MenuModule
+    MenuModule,
+    PaginationModule,
+    SearchModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

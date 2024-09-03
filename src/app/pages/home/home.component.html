@@ -1,22 +1,22 @@
-<app-pagination></app-pagination>
-<app-search></app-search>
 <div *ngIf="characterResponse$ | async as characterResponse; else loading">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div *ngFor="let character of characterResponse.results">
         <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-white">
           <h3 class="text-xl font-bold mb-2">{{ character.name }}</h3>
-          <img [src]="character.image" alt="{{ character.name }}" class="rounded shadow-lg mb-4 w-32 h-32 object-cover">
+          <a routerLink="/character-details">
+            <img [src]="character.image" alt="{{ character.name }}" class="rounded shadow-lg mb-4 w-32 h-32 object-cover">
+          </a>
           <p>Status: {{ character.status }}</p>
           <p>Species: {{ character.species }}</p>
           <p>Gender: {{ character.gender }}</p>
         </div>
       </div>
     </div>
-  </div>
+</div>
   
-  <ng-template #loading>
-    <p>Loading characters...</p>
-  </ng-template>
+<ng-template #loading>
+  <p>Loading characters...</p>
+</ng-template>
 
 <app-pagination></app-pagination>
 

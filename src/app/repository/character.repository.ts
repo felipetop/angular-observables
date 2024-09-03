@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { getAllCharactersGraphQl } from './queries/all-characters.graphql';
+import { getCharacterByIdGraphQl } from './queries/get-character-by-id.graphql';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,10 @@ export class CharacterRepository {
     return this.httpClient.post<any>(this.endpoint, { query, variables });
   }
 
-  public (id: number): Observable<any> {
-    return this.httpClient.get<any>(`${this.apiUrl}/${id}`);
+  public getCharacter(id: number): Observable<any> {
+    const query = getCharacterByIdGraphQl;
+    const variables = { id: id };
+
+    return this.httpClient.post<any>(this.endpoint, { query, variables });
   }
 }
