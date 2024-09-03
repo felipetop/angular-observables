@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject, Observable } from 'rxjs';
 import { Team, TeamMember } from '../model/team.model';
+import { TeamImpl } from '../model/team.model.impl';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,7 @@ export class TeamService {
   private team$ = new ReplaySubject<Team>(3);
 
   constructor() {
-    this.team$.next(this.mockTeam);
+    this.team$.next(new TeamImpl());
   }
 
   public setTeam(team: Team): void {
@@ -51,7 +53,7 @@ export class TeamService {
   
   public mockTeam: Team = {
     manager: this.mockTeamMembers[0],
-    coordinator: this.mockTeamMembers[1],
+    coordinator: this.mockTeamMembers[0],
     scrumMaster: this.mockTeamMembers[1],
     productOwner: this.mockTeamMembers[2],
     developerOne: this.mockTeamMembers[1],
