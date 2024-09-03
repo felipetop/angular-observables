@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ReplaySubject, Observable, BehaviorSubject } from 'rxjs';
 import { CharacterRepository } from '../repository/character.repository';
 import { CharacterResponse } from '../model/character.model';
+import { CharacterData } from '../model/character-detail.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class CharacterService {
     return this.characters$.asObservable();
   }
 
-  public getCharacterById(id: number): Observable<any> {
+  public getCharacterById(id: number): Observable<CharacterData> {
     return this.characterRepository.getCharacter(id);
   }
 }
