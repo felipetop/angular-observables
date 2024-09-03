@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { CharacterResponse } from 'src/app/model/character.model';
-import { CharacterService } from 'src/app/service/character.service';
+import { CharacterResponse } from '../../model/character.model';
+import { CharacterService } from '../../service/character.service';
 
 @Component({
   selector: 'app-pagination',

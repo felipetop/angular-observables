@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { SingleCharacterModule } from './pages/single-character/single-character.module';
 
 type RouteConfig = {
   [key: string]: string;
@@ -29,12 +30,19 @@ const routes: Routes = [
     children: [
       {
         path: routeConfig['itemList'],
-        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+        loadChildren: () => 
+          import('./pages/home/home.module').then(m => m.HomeModule)
       },
     ]
   },
-  { path: 'character-details', loadChildren: () => import('./pages/single-character/single-character.module').then(m => m.SingleCharacterModule) },
-  { path: 'my-team', loadChildren: () => import('./pages/my-team/my-team.module').then(m => m.MyTeamModule) },
+  { 
+    path: 'character-details' + '/:id', 
+    loadChildren: (): Promise<SingleCharacterModule> => 
+      import('./pages/single-character/single-character.module').then(m => m.SingleCharacterModule) 
+  },
+  { path: 'my-team',
+    loadChildren: () => 
+      import('./pages/my-team/my-team.module').then(m => m.MyTeamModule) },
 ];
 
 @NgModule({

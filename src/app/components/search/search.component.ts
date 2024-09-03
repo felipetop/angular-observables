@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CharacterService } from 'src/app/service/character.service';
-import { debounceTime, switchMap } from 'rxjs/operators';
-import { CharacterResponse } from 'src/app/model/character.model';
+import { CharacterService } from '../../service/character.service';
+import { debounceTime } from 'rxjs/operators';
+import { CharacterResponse } from '../../model/character.model';
 
 @Component({
   selector: 'app-search',

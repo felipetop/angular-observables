@@ -27,11 +27,11 @@ export class CharacterService {
     this.loadCharacters(1);
   }
 
-  getCharacters(): Observable<CharacterResponse> {
+  public getCharacters(): Observable<CharacterResponse> {
     return this.characters$.asObservable();
   }
 
-  // getCharacterById(id: number): Observable<any> {
-  //   return this.characterRepository.getCharacterById(id);
-  // }
+  public getCharacterById(id: number): Observable<any> {
+    return this.characterRepository.getCharacter(id);
+  }
 }
