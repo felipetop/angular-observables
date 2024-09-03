@@ -11,8 +11,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MenuModule,
-    PaginationModule,
-    SearchModule,
     RouterModule
   ],
   exports: [

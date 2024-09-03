@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { HeaderModule } from '../../components/header/header.module';
 import { PaginationModule } from '../../components/pagination/pagination.module';
 import { RouterModule } from '@angular/router';
+import { SearchModule } from 'src/app/components/search/search.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
     HeaderModule,
     HomeRoutingModule,
     PaginationModule,
+    SearchModule,
     RouterModule
   ],
   exports: [
