@@ -1,10 +1,39 @@
 <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-white">
-    <h3 class="text-xl font-bold mb-2">{{ character.name }}</h3>
-    <a [routerLink]="['/character-details', character.id]">
-      <img [src]="character.image" alt="{{ character.name }}" class="rounded shadow-lg mb-4 w-32 h-32 object-cover">
+  <!-- Nome do personagem com link para a página de detalhes -->
+  <h3 class="text-xl font-bold mb-2">
+    <a [routerLink]="['/character-details', character.id]" class="text-blue-400 hover:underline">
+      {{ character.name }}
     </a>
-    <p>Status: {{ character.status }}</p>
-    <p>Species: {{ character.species }}</p>
-    <p>Gender: {{ character.gender }}</p>
-</div>
+  </h3>
+
+  <!-- Imagem do personagem com link para a página de detalhes -->
+  <a [routerLink]="['/character-details', character.id]">
+    <img [src]="character.image" alt="{{ character.name }}" class="rounded shadow-lg mb-4 w-32 h-32 object-cover">
+  </a>
   
+  <!-- Detalhes do personagem -->
+  <p>Status: {{ character.status }}</p>
+  <p>Species: {{ character.species }}</p>
+  <p>Gender: {{ character.gender }}</p>
+
+  <!-- Selecionar Cargo e botão para adicionar ao time -->
+  <div class="flex items-center space-x-2 mt-4">
+    <select [(ngModel)]="selectedRole" class="bg-gray-700 text-white rounded p-2 w-full">
+      <option value="manager">Gestor</option>
+      <option value="coordinator">Coordenador</option>
+      <option value="scrumMaster">Scrum Master</option>
+      <option value="productOwner">Product Owner</option>
+      <option value="developerOne">DEV 1</option>
+      <option value="developerTwo">DEV 2</option>
+      <option value="developerThree">DEV 3</option>
+      <option value="qualityAssuranceOne">QA 1</option>
+      <option value="qualityAssuranceTwo">QA 2</option>
+      <option value="pet">Pet</option>
+    </select>
+
+    <!-- Botão para adicionar ao time -->
+    <button (click)="onCardClick()" class="bg-blue-500 text-white rounded p-2 hover:bg-blue-700">
+      Adicionar
+    </button>
+  </div>
+</div>
