@@ -4,12 +4,23 @@
         <div>
             <h1 class="text-5xl font-extrabold mb-4">{{ character.name }}</h1>
             <div class="text-lg">
-                <p><strong class="font-semibold">Status: </strong> {{ character.status }}</p>
-                <p><strong class="font-semibold">Species: </strong> {{ character.species }}</p>
-                <p><strong class="font-semibold">Gender: </strong> {{ character.gender }}</p>
-                <p><strong class="font-semibold">Origin: </strong> {{ character.origin.name }}</p>
-                <p><strong class="font-semibold">Location: </strong> {{ character.location.name }}</p>
+                <p><strong class="font-semibold">Status:</strong> {{ character.status }}</p>
+                <p><strong class="font-semibold">Species:</strong> {{ character.species }}</p>
+                <p *ngIf="character.type"><strong class="font-semibold">Type:</strong> {{ character.type }}</p>
+                <p><strong class="font-semibold">Gender:</strong> {{ character.gender }}</p>
+                <p><strong class="font-semibold">Origin:</strong> {{ character.origin.name }}</p>
+                <p class="ml-4"><strong class="font-semibold">Dimension:</strong> {{ character.origin.dimension }}</p>
+                <p><strong class="font-semibold">Location:</strong> {{ character.location.name }}</p>
+                <p class="ml-4"><strong class="font-semibold">Dimension:</strong> {{ character.location.dimension }}</p>
             </div>
         </div>
+    </div>
+    <div class="mt-6">
+        <h2 class="text-3xl font-bold mb-4">Episodes</h2>
+        <ul class="list-disc list-inside">
+            <li *ngFor="let ep of character.episode">
+                <strong>{{ ep.episode }}</strong> - {{ ep.name }} ({{ ep.air_date }})
+            </li>
+        </ul>
     </div>
 </div>
