@@ -1,70 +1,90 @@
 <div class="text-white mx-auto">
     <h1 class="text-xl font-bold mb-2 text-center">Escolha Sua Equipe</h1>
-    
+
     <!-- Organização em uma linha -->
     <div *ngIf="team$ | async as team" class="flex justify-center items-center flex-wrap space-x-1">
         <!-- Gestor -->
         <div class="bg-blue-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.manager" [src]="team.manager.image" alt="{{ team.manager.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.manager" [routerLink]="['/character-details', team.manager.id]">
+                <img [src]="team.manager.image" alt="{{ team.manager.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.manager" class="text-xs font-bold">Gestor</p>
         </div>
 
         <!-- Coordenador -->
         <div class="bg-blue-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.coordinator" [src]="team.coordinator.image" alt="{{ team.coordinator.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.coordinator" [routerLink]="['/character-details', team.coordinator.id]">
+                <img [src]="team.coordinator.image" alt="{{ team.coordinator.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.coordinator" class="text-xs font-bold">Coordenador</p>
         </div>
 
         <!-- Scrum Master -->
         <div class="bg-green-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.scrumMaster" [src]="team.scrumMaster.image" alt="{{ team.scrumMaster.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.scrumMaster" [routerLink]="['/character-details', team.scrumMaster.id]">
+                <img [src]="team.scrumMaster.image" alt="{{ team.scrumMaster.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.scrumMaster" class="text-xs font-bold">Scrum Master</p>
         </div>
 
         <!-- Product Owner -->
         <div class="bg-green-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.productOwner" [src]="team.productOwner.image" alt="{{ team.productOwner.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.productOwner" [routerLink]="['/character-details', team.productOwner.id]">
+                <img [src]="team.productOwner.image" alt="{{ team.productOwner.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.productOwner" class="text-xs font-bold">Product Owner</p>
         </div>
 
         <!-- DEV 1 -->
         <div class="bg-yellow-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.developerOne" [src]="team.developerOne.image" alt="{{ team.developerOne.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.developerOne" [routerLink]="['/character-details', team.developerOne.id]">
+                <img [src]="team.developerOne.image" alt="{{ team.developerOne.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.developerOne" class="text-xs font-bold">DEV 1</p>
         </div>
 
         <!-- DEV 2 -->
         <div class="bg-yellow-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.developerTwo" [src]="team.developerTwo.image" alt="{{ team.developerTwo.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.developerTwo" [routerLink]="['/character-details', team.developerTwo.id]">
+                <img [src]="team.developerTwo.image" alt="{{ team.developerTwo.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.developerTwo" class="text-xs font-bold">DEV 2</p>
         </div>
 
         <!-- DEV 3 -->
         <div class="bg-yellow-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.developerThree" [src]="team.developerThree.image" alt="{{ team.developerThree.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.developerThree" [routerLink]="['/character-details', team.developerThree.id]">
+                <img [src]="team.developerThree.image" alt="{{ team.developerThree.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.developerThree" class="text-xs font-bold">DEV 3</p>
         </div>
 
         <!-- QA 1 -->
         <div class="bg-red-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.qualityAssuranceOne" [src]="team.qualityAssuranceOne.image" alt="{{ team.qualityAssuranceOne.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.qualityAssuranceOne" [routerLink]="['/character-details', team.qualityAssuranceOne.id]">
+                <img [src]="team.qualityAssuranceOne.image" alt="{{ team.qualityAssuranceOne.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.qualityAssuranceOne" class="text-xs font-bold">QA 1</p>
         </div>
 
         <!-- QA 2 -->
         <div class="bg-red-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.qualityAssuranceTwo" [src]="team.qualityAssuranceTwo.image" alt="{{ team.qualityAssuranceTwo.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.qualityAssuranceTwo" [routerLink]="['/character-details', team.qualityAssuranceTwo.id]">
+                <img [src]="team.qualityAssuranceTwo.image" alt="{{ team.qualityAssuranceTwo.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.qualityAssuranceTwo" class="text-xs font-bold">QA 2</p>
         </div>
 
         <!-- Pet -->
         <div class="bg-purple-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
-            <img *ngIf="team.pet" [src]="team.pet.image" alt="{{ team.pet.name }}" class="w-100 h-100 rounded-lg">
+            <a *ngIf="team.pet" [routerLink]="['/character-details', team.pet.id]">
+                <img [src]="team.pet.image" alt="{{ team.pet.name }}" class="w-100 h-100 rounded-lg">
+            </a>
             <p *ngIf="!team.pet" class="text-xs font-bold">Pet</p>
         </div>
 
-        <!-- Pet -->
-        <a  routerLink="/my-team" class="bg-red-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+        <!-- Botão para ver time completo -->
+        <a routerLink="/my-team" class="bg-red-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
             <p class="text-xs font-bold">Seu Time</p>
         </a>
     </div>
