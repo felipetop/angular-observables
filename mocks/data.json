@@ -36,7 +36,259 @@
               "name": "Citadel of Ricks"
             },
             "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
-          }
+          },
+          {
+            "id": "321",
+            "name": "Shrimply Pibbles",
+            "status": "Alive",
+            "species": "Alien",
+            "gender": "Male",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "St. Gloopy Noops Hospital"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/321.jpeg"
+        },
+        {
+            "id": "322",
+            "name": "Simple Rick",
+            "status": "Dead",
+            "species": "Human",
+            "gender": "Male",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "Citadel of Ricks"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/322.jpeg"
+        },
+        {
+            "id": "323",
+            "name": "Slaveowner",
+            "status": "Dead",
+            "species": "Human",
+            "gender": "Male",
+            "origin": {
+                "name": "Post-Apocalyptic Earth"
+            },
+            "location": {
+                "name": "Post-Apocalyptic Earth"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/323.jpeg"
+        },
+        {
+            "id": "324",
+            "name": "Sleepy Gary",
+            "status": "Dead",
+            "species": "Alien",
+            "gender": "Male",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/324.jpeg"
+        },
+        {
+            "id": "325",
+            "name": "Slick Morty",
+            "status": "Dead",
+            "species": "Human",
+            "gender": "Male",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "Citadel of Ricks"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/325.jpeg"
+        },
+        {
+            "id": "326",
+            "name": "Slippery Stair",
+            "status": "Alive",
+            "species": "Mythological Creature",
+            "gender": "Male",
+            "origin": {
+                "name": "Fantasy World"
+            },
+            "location": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/326.jpeg"
+        },
+        {
+            "id": "327",
+            "name": "Slow Mobius",
+            "status": "Alive",
+            "species": "Humanoid",
+            "gender": "Male",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/327.jpeg"
+        },
+        {
+            "id": "329",
+            "name": "Snuffles (Snowball)",
+            "status": "Alive",
+            "species": "Animal",
+            "gender": "Male",
+            "origin": {
+                "name": "Earth (C-137)"
+            },
+            "location": {
+                "name": "unknown"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/329.jpeg"
+        },
+        {
+            "id": "330",
+            "name": "Solicitor Rick",
+            "status": "unknown",
+            "species": "Human",
+            "gender": "Male",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "Citadel of Ricks"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/330.jpeg"
+        },
+        {
+            "id": "331",
+            "name": "Squanchy",
+            "status": "unknown",
+            "species": "Alien",
+            "gender": "Male",
+            "origin": {
+                "name": "Planet Squanch"
+            },
+            "location": {
+                "name": "Planet Squanch"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/331.jpeg"
+        },
+        {
+            "id": "332",
+            "name": "Stacy",
+            "status": "Alive",
+            "species": "Human",
+            "gender": "Female",
+            "origin": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "location": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/332.jpeg"
+        },
+        {
+            "id": "333",
+            "name": "Stair Goblin",
+            "status": "Alive",
+            "species": "Mythological Creature",
+            "gender": "Genderless",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "Fantasy World"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/333.jpeg"
+        },
+        {
+            "id": "334",
+            "name": "Stealy",
+            "status": "Alive",
+            "species": "Poopybutthole",
+            "gender": "Male",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "Interdimensional Cable"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/334.jpeg"
+        },
+        {
+            "id": "335",
+            "name": "Steve",
+            "status": "Alive",
+            "species": "Human",
+            "gender": "Male",
+            "origin": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "location": {
+                "name": "Earth (Replacement Dimension)"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/335.jpeg"
+        },
+        {
+            "id": "336",
+            "name": "Steven Phillips",
+            "status": "Alive",
+            "species": "Alien",
+            "gender": "Male",
+            "origin": {
+                "name": "Unity's Planet"
+            },
+            "location": {
+                "name": "Unity's Planet"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/336.jpeg"
+        },
+        {
+            "id": "337",
+            "name": "Stu",
+            "status": "Dead",
+            "species": "Alien",
+            "gender": "Male",
+            "origin": {
+                "name": "unknown"
+            },
+            "location": {
+                "name": "Zigerion's Base"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/337.jpeg"
+        },
+        {
+            "id": "338",
+            "name": "Summer Smith",
+            "status": "Alive",
+            "species": "Human",
+            "gender": "Female",
+            "origin": {
+                "name": "Earth (C-137)"
+            },
+            "location": {
+                "name": "Earth (C-137)"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/338.jpeg"
+        },
+        {
+            "id": "339",
+            "name": "Summer Smith",
+            "status": "Alive",
+            "species": "Human",
+            "gender": "Female",
+            "origin": {
+                "name": "Earth (Evil Rick's Target Dimension)"
+            },
+            "location": {
+                "name": "Earth (Evil Rick's Target Dimension)"
+            },
+            "image": "https://rickandmortyapi.com/api/character/avatar/339.jpeg"
+        }
         ]
       }
     }
