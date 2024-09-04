@@ -9,12 +9,12 @@ import { Team } from '../../model/team.model';
   styleUrls: ['./team-selection.component.css']
 })
 export class TeamSelectionComponent implements OnInit {
-
+  
   public team$!: Observable<Team>;
 
   constructor(private teamService: TeamService) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.team$ = this.teamService.getTeam();
   }
 
