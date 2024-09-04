@@ -1,1 +1,39 @@
-<p>my-team works!</p>
+<div class="text-white mx-auto">
+    <h1 class="text-xl font-bold mb-4 text-center">Histórico de Equipes</h1>
+    
+    <div *ngFor="let team of teamHistory$ | async">
+        <h2 class="text-lg font-bold mb-2 text-center">Equipe</h2>
+        <div class="flex justify-center items-center flex-wrap space-x-1 mb-4">
+            <div *ngIf="team.manager" class="bg-blue-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.manager.image" alt="{{ team.manager.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.coordinator" class="bg-blue-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.coordinator.image" alt="{{ team.coordinator.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.scrumMaster" class="bg-green-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.scrumMaster.image" alt="{{ team.scrumMaster.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.productOwner" class="bg-green-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.productOwner.image" alt="{{ team.productOwner.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.developerOne" class="bg-yellow-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.developerOne.image" alt="{{ team.developerOne.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.developerTwo" class="bg-yellow-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.developerTwo.image" alt="{{ team.developerTwo.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.developerThree" class="bg-yellow-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.developerThree.image" alt="{{ team.developerThree.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.qualityAssuranceOne" class="bg-red-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.qualityAssuranceOne.image" alt="{{ team.qualityAssuranceOne.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.qualityAssuranceTwo" class="bg-red-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.qualityAssuranceTwo.image" alt="{{ team.qualityAssuranceTwo.name }}" class="w-full h-full rounded-lg">
+            </div>
+            <div *ngIf="team.pet" class="bg-purple-600 rounded-lg p-1 w-20 h-20 flex items-center justify-center text-center">
+                <img [src]="team.pet.image" alt="{{ team.pet.name }}" class="w-full h-full rounded-lg">
+            </div>
+        </div>
+    </div>
+</div>

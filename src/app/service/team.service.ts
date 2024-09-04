@@ -25,8 +25,8 @@ export class TeamService {
     return this.team$.asObservable();
   }
 
-  public getTeamHistory(): Observable<Team[]> {
-    return this.teamHistory$.pipe(toArray());  // Converte as emissões em um array
+  public getTeamHistory(): Observable<Team> {
+    return this.teamHistory$.asObservable();
   }
 
   public addTeamMember(role: keyof Team, member: TeamMember): void {
