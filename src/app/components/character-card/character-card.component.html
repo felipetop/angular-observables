@@ -1,24 +1,26 @@
 <div class="bg-gray-800 rounded-lg shadow-lg p-6 text-white">
   <!-- Nome do personagem com link para a página de detalhes -->
-  <h3 class="text-xl font-bold mb-2">
-    <a [routerLink]="['/character-details', character.id]" class="text-blue-400 hover:underline">
+  <h3 class="text-2xl font-extrabold mb-4">
+    <a [routerLink]="['/character-details', character.id]" class="text-blue-400 hover:text-blue-300 hover:underline transition-all duration-200">
       {{ character.name }}
     </a>
   </h3>
 
   <!-- Imagem do personagem com link para a página de detalhes -->
   <a [routerLink]="['/character-details', character.id]">
-    <img [src]="character.image" alt="{{ character.name }}" class="rounded shadow-lg mb-4 w-32 h-32 object-cover">
+    <img [src]="character.image" alt="{{ character.name }}" class="rounded-lg shadow-lg mb-4 object-cover hover:scale-105 transition-transform duration-300">
   </a>
   
   <!-- Detalhes do personagem -->
-  <p>Status: {{ character.status }}</p>
-  <p>Species: {{ character.species }}</p>
-  <p>Gender: {{ character.gender }}</p>
+  <div class="mb-4 space-y-1">
+    <p class="text-sm"><strong>Status:</strong> {{ character.status }}</p>
+    <p class="text-sm"><strong>Species:</strong> {{ character.species }}</p>
+    <p class="text-sm"><strong>Gender:</strong> {{ character.gender }}</p>
+  </div>
 
   <!-- Selecionar Cargo e botão para adicionar ao time -->
-  <div class="flex items-center space-x-2 mt-4">
-    <select [(ngModel)]="selectedRole" class="bg-gray-700 text-white rounded p-2 w-full">
+  <div class="flex items-center space-x-4 mt-4">
+    <select [(ngModel)]="selectedRole" class="bg-gray-700 text-white rounded p-2 w-full focus:outline-none focus:ring focus:ring-blue-500">
       <option value="manager">Gestor</option>
       <option value="coordinator">Coordenador</option>
       <option value="scrumMaster">Scrum Master</option>
@@ -32,7 +34,7 @@
     </select>
 
     <!-- Botão para adicionar ao time -->
-    <button (click)="onCardClick()" class="bg-blue-500 text-white rounded p-2 hover:bg-blue-700">
+    <button (click)="onCardClick()" class="bg-blue-500 text-white rounded-lg px-4 py-2 font-semibold hover:bg-blue-600 transition-colors duration-200 shadow-md hover:shadow-lg">
       Adicionar
     </button>
   </div>
